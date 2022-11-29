@@ -17,20 +17,20 @@ local Window = Rayfield:CreateWindow({
 	LoadingSubtitle = "By : yppird_#1836",
 	ConfigurationSaving = {
 		Enabled = true,
-		FolderName = "T_Bedwars", -- Create a custom folder for your hub/game
+		FolderName = "T_Bedwars", 
 		FileName = "ImagineNoAC"
 	},
 })
 
 
-local MainTab = Window:CreateTab("Main", 4483362458)-- Title, Image
+local MainTab = Window:CreateTab("Main", 4483362458)
 
 local MainSection = MainTab:CreateSection("Insta Kill")
 
 local InstaKillToggle = MainTab:CreateToggle({
 	Name = "Insta Kill",
 	CurrentValue = false,
-	Flag = "InstaKill", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Flag = "InstaKill",
 	Callback = function(InstaKillValue)
 		if InstaKillValue then
 			_G.InstaKillExploit = true
@@ -149,7 +149,7 @@ local FlySection = MainTab:CreateSection("Fly")
 local FlyToggle = MainTab:CreateToggle({
 	Name = "Fly",
 	CurrentValue = false,
-	Flag = "Fly", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Flag = "Fly",
 	Callback = function(FlyValue)
 		if FlyValue then
 			_G.Velo = true
@@ -170,8 +170,7 @@ local FlyToggle = MainTab:CreateToggle({
 local GravityFlyToggle = MainTab:CreateToggle({
 	Name = "Gravity Fly",
 	CurrentValue = false,
-	Flag = "GravFly", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-	Callback = function(GravityValue)
+	Flag = "GravFly", 
 		if GravityValue then
 			game.workspace.Gravity = 0
 		else
@@ -189,7 +188,7 @@ local Speed = MainTab:CreateSlider({
 	Increment = 1,
 	Suffix = "",
 	CurrentValue = 16,
-	Flag = "Speed", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Flag = "Speed", 
 	Callback = function(SpeedValue)
         Plr.Character.Humanoid.WalkSpeed = SpeedValue
 	end,
@@ -203,7 +202,7 @@ local Gravity = MainTab:CreateSlider({
 	Increment = 1,
 	Suffix = "",
 	CurrentValue = 192,
-	Flag = "Gravity", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Flag = "Gravity", 
 	Callback = function(GravityValue)
         game.workspace.Gravity = GravityValue
 	end,
@@ -269,7 +268,7 @@ local EspSection = VisualTab:CreateSection("Esp")
 local Esp = VisualTab:CreateToggle({
 	Name = "Esp - Outline",
 	CurrentValue = false,
-	Flag = "EspOutlineMode", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Flag = "EspOutlineMode",
 	Callback = function(EspValue)
         if EspValue then
             for i, v in pairs(Plrs:GetChildren()) do
@@ -307,7 +306,7 @@ local NukerSection = OtherTab:CreateSection("Nuker")
 local NukerToggle = OtherTab:CreateToggle({
 	Name = "Nuker",
 	CurrentValue = false,
-	Flag = "Nuker", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Flag = "Nuker",
 	Callback = function(NukerValue)
 		if NukerValue then 
 			Nuker1 = true
@@ -340,7 +339,7 @@ local StaffSection = OtherTab:CreateSection("Staff Detector")
 local SaffToggle = OtherTab:CreateToggle({
 	Name = "Staff Detector",
 	CurrentValue = false,
-	Flag = "StaffDetector", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Flag = "StaffDetector",
 	Callback = function(StaffValue)
 		if StaffValue then
 			getgenv().StaffToggle = true;
@@ -353,10 +352,10 @@ local SaffToggle = OtherTab:CreateToggle({
 						if v:GetRoleInGroup(15022320) == "Tester" then
 							Rayfield:Notify({
 								Title = "Staff Detected",
-								Content = "There is a Staff in your game",
+								Content = "There is a Tester in your game",
 								Duration = 6.5,
 								Image = 4483362458,
-								Actions = { -- Notification Buttons
+								Actions = { 
 									Ignore = {
 										Name = "Okay!",
 										Callback = function()
@@ -369,10 +368,10 @@ local SaffToggle = OtherTab:CreateToggle({
 						if v:GetRoleInGroup(15022320) == "Developer" then
 							Rayfield:Notify({
 								Title = "Staff Detected",
-								Content = "There is a Staff in your game",
+								Content = "There is a Developer in your game",
 								Duration = 6.5,
 								Image = 4483362458,
-								Actions = { -- Notification Buttons
+								Actions = { 
 									Ignore = {
 										Name = "Okay!",
 										Callback = function()
@@ -385,10 +384,10 @@ local SaffToggle = OtherTab:CreateToggle({
 						if v:GetRoleInGroup(15022320) == "Lead AC Mod" then
 							Rayfield:Notify({
 								Title = "Staff Detected",
-								Content = "There is a Staff in your game",
+								Content = "The Lead AC Mod/s in your game",
 								Duration = 6.5,
 								Image = 4483362458,
-								Actions = { -- Notification Buttons
+								Actions = { 
 									Ignore = {
 										Name = "Okay!",
 										Callback = function()
@@ -401,10 +400,10 @@ local SaffToggle = OtherTab:CreateToggle({
 						if v:GetRoleInGroup(15022320) == "AC Mod" then
 							Rayfield:Notify({
 								Title = "Staff Detected",
-								Content = "There is a Staff in your game",
+								Content = "There is an AC Mod in your game",
 								Duration = 6.5,
 								Image = 4483362458,
-								Actions = { -- Notification Buttons
+								Actions = {
 									Ignore = {
 										Name = "Okay!",
 										Callback = function()
@@ -417,10 +416,10 @@ local SaffToggle = OtherTab:CreateToggle({
 						if v:GetRoleInGroup(15022320) == "Contributors" then
 							Rayfield:Notify({
 								Title = "Staff Detected",
-								Content = "There is a Staff in your game",
+								Content = "There is a Contributor in your game",
 								Duration = 6.5,
 								Image = 4483362458,
-								Actions = { -- Notification Buttons
+								Actions = { 
 									Ignore = {
 										Name = "Okay!",
 										Callback = function()
@@ -433,7 +432,7 @@ local SaffToggle = OtherTab:CreateToggle({
 						if v:GetRoleInGroup(15022320) == "YouTuber" then
 							Rayfield:Notify({
 								Title = "Staff Detected",
-								Content = "There is a Staff in your game",
+								Content = "There is a Youtuber in your game",
 								Duration = 6.5,
 								Image = 4483362458,
 								Actions = { -- Notification Buttons
@@ -449,7 +448,7 @@ local SaffToggle = OtherTab:CreateToggle({
 						if v:GetRoleInGroup(15022320) == "telanthric" then
 							Rayfield:Notify({
 								Title = "Staff Detected",
-								Content = "There is a Staff in your game",
+								Content = "TELANTHRIC DETECTED IN SERVER",
 								Duration = 6.5,
 								Image = 4483362458,
 								Actions = { -- Notification Buttons
