@@ -3,14 +3,6 @@ local Plr = game:GetService("Players").LocalPlayer
 local Plrs = game:GetService("Players")
 
 
-
-
-
-
-
-
-
-
 local Window = Rayfield:CreateWindow({
 	Name = "T_Bedwars",
 	LoadingTitle = "T_Bedwars ",
